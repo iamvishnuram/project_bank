@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>MazeBank</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="{% static 'css/reset.css' %}" type="text/css" media="screen">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/grid.css' %}" type="text/css" media="screen">
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script src=" {% static 'staticjs/jquery-1.7.1.min.js' %} "></script>
+<script src=" {% static 'staticjs/cufon-yui.js' %} "></script>
+<script src=" {% static 'staticjs/cufon-replace.js' %} "></script>
+<script src=" {% static 'staticjs/Asap_400.font.js' %} "></script>
+<script src=" {% static 'staticjs/Asap_italic_400.font.js' %} "></script>
+<script src=" {% static 'staticjs/FF-cash.js' %} "></script>
+<script src=" {% static 'staticjs/jquery.equalheights.js' %} "></script>
+<script src=" {% static 'staticjs/jquery.cycle.all.js' %} "></script>
+<script>
+$('#banners')
+    .cycle({
+    fx: 'fade',
+    delay: 7000,
+    timeout: 30000,
+    manualTrump: false,
+    cleartypeNoBg: true,
+    next: '#next',
+    prev: '#prev'
+});
+</script>
+<!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<link rel="stylesheet" href="css/ie.css" type="text/css" media="screen">
+<![endif]-->
+</head>
+<body id="page1">
+<div class="main">
+  <!--==============================header=================================-->
+  <header>
+    <div class="container_12">
+      <div class="wrapper p3">
+        <div class="grid_12">
+          <div>
+            <h1><a href="#">Maze<strong>Bank</strong></a></h1>
+            <nav>
+              <ul class="menu">
+                {% if user.is_authenticated %}
+									<li>Welcome {{user.username}}</li>
+									<li><a href="bankapp/logout">Logout</a></li>
+									{% else %}
+
+									<li><a class="active" href="registration/login">Login</a></li>
+                  <li><a href="registration/register">Register</a></li>
+									{% endif %}
+                
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+                    Branches
+                  </a>
+                  <ul class="dropdown-menu"> 
+                <li class="nav-item">
+                  <a class="nav-link" href="https://en.wikipedia.org/wiki/Vatakara">Vadakara</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://en.wikipedia.org/wiki/Kozhikode">Calicut</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://en.wikipedia.org/wiki/Ernakulam">Ernakulam</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://en.wikipedia.org/wiki/Thrissur">Trissur</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://en.wikipedia.org/wiki/Thiruvananthapuram">Trivandrum</a>
+                </li>
+              </ul>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="wrapper">
+            <div id="banners" class="border-bot">
+              <div> <strong class="title-1">Success</strong> <strong class="title-2">Your Join request was successfully processed</strong></div>
+            </div>
+        </div>
+      </div>
+      <div class="flex justify-center items-center">
+        <a href="user">Click Here to redirect to User Home Page</a>
+      </div>
+    </div>
+  </header>
+  <!--==============================content================================-->
+  <section id="content">
+    <div class="container_12">
+      <div class="wrapper">
+        <article class="grid_4">
+          <div class="indent-right">
+            <div class="maxheight img-indent-bot">
+              <h3>Welcome!</h3>
+              <p>Guide.com is one o free website templates created by TemplateMonster.com. This website template is optimized for 1280X1024 screen resolution. It is also XHTML &amp; CSS valid.</p>
+              This Guide.com Template goes with two pack ages – with PSD source files and without them. PSD source files are available for free for the registered members of TemplateMonster.com. The basic package (without PSD source) is available for anyone without registration. </div>
+            <a class="button" href="#">More</a> </div>
+        </article>
+        <article class="grid_4">
+          <div class="indent">
+            <div class="maxheight img-indent-bot">
+              <h3>Recent News</h3>
+              <time class="tdate-1" datetime="2022-02-06"><a class="link" href="#">Posted: 6.02.2022</a></time>
+              <p>Nam liber tempor cum soluta nobis eleifend option congue nihimperdiet doming quod mazim placerat facer possim assum orem ipsum dolor sit amet consectetuer.</p>
+              <time class="tdate-1" datetime="2022-02-04"><a class="link" href="#">Posted: 4.02.2022</a></time>
+              Adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation. </div>
+            <a class="button" href="#">More</a> </div>
+        </article>
+        <article class="grid_4">
+          <div class="indent-left">
+            <div class="maxheight img-indent-bot">
+              <h3 class="p1">Grow wtih us</h3>
+              <ul class="list-1">
+                <li><a href="#">Fixed Deposit</a></li>
+                <li><a href="#">Mutual Fund</a></li>
+                <li><a href="#">Market Analysis</a></li>
+                <li><a href="#">Invest in Stocks</a></li>
+                <li><a href="#">Retirement Planning</a></li>
+                <li><a href="#">Scientific and Risk Assessment</a></li>
+              </ul>
+            </div>
+            <a class="button" href="#">More</a> </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!--==============================footer=================================-->
+  <footer>
+    <div class="inner">
+      <div class="footer-bg"> MazeBank.com &copy; 2022 <span>All rights Reserved <br> <a target="_blank" href="http://www.templatemonster.com/" class="link">MazeBank Arena </a></span> </div>
+    </div>
+  </footer>
+</div>
+<script>Cufon.now();</script>
+</body>
+</html>
